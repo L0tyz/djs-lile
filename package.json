@@ -1,0 +1,24 @@
+{
+  "name": "djs-lile",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/L0tyz/djs-lile#readme",
+  "bugs": {
+    "url": "https://github.com/L0tyz/djs-lile/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/L0tyz/djs-lile.git"
+  },
+  "license": "ISC",
+  "author": "L0tyz",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "discord.js": "^14.25.1",
+    "dotenv": "^17.2.3"
+  }
+}
