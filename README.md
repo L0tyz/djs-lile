@@ -1,2 +1,4 @@
-# djs-lile
-L'ile discord bot 
+# DISCORD BOT FOR l'ILE 974
+
+
+## WIP
