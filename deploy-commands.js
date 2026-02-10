@@ -28,7 +28,7 @@ const rest = new REST().setToken(process.env.DISCORD_TOKEN);
 	try {
 		console.log(`Début du rafraîchissement des commandes ${commands.length}.`);
 
-		const data = await rest.put(Routes.applicationGuildCommands(process.env.CLIENT_ID, process.env.GUILD_ID), { body: commands });
+		const data = await rest.put(Routes.applicationGuildCommands(clientId, guildId), { body: commands });
 
 		console.log(`Rechargement réussi des commandes ${data.length}.`);
 	} catch (error) {
@@ -36,3 +36,5 @@ const rest = new REST().setToken(process.env.DISCORD_TOKEN);
 		console.error(error);
 	}
 })();
+
+// NODE MODULE ERR
