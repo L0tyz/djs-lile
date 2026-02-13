@@ -11,14 +11,7 @@ const client = new Client({
   ]
 });
 
-client.once('clientReady', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
-});
-
-client.login(process.env.DISCORD_TOKEN);
 client.commands = new Collection(); 
-
-
 const foldersPath = path.join(__dirname, 'commands');
 const commandFolders = fs.readdirSync(foldersPath);
 
@@ -36,27 +29,4 @@ for (const folder of commandFolders) {
 	}
 }
 
-client.on(Events.InteractionCreate, async (interaction) => {
-	if (!interaction.isChatInputCommand()) return;
-	const command = interaction.client.commands.get(interaction.commandName);
-	if (!command) {
-		console.error(`Aucune commande correspondant à ${interaction.commandName} trouver.`);
-		return;
-	}
-	try {
-		await command.execute(interaction);
-	} catch (error) {
-		console.error(error);
-		if (interaction.replied || interaction.deferred) {
-			await interaction.followUp({
-				content: 'Une erreur s\'est produite lors de l\'exécution de cette commande !',
-				flags: MessageFlags.Ephemeral,
-			});
-		} else {
-			await interaction.reply({
-				content: 'Une erreur s\'est produite lors de l\'exécution de cette commande !',
-				flags: MessageFlags.Ephemeral,
-			});
-		}
-	}
-});
+client.login(process.env.DISCORD_TOKEN);
